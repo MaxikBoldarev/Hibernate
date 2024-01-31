@@ -1,7 +1,7 @@
 package com.example.hibernate.controller;
 
 import com.example.hibernate.entity.Person;
-import com.example.hibernate.service.GetServiceImpl;
+import com.example.hibernate.service.PersonServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,8 +14,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/persons")
 @RequiredArgsConstructor
-public class GetController {
-    public final GetServiceImpl service;
+public class PersonController {
+    public final PersonServiceImpl service;
 
     @GetMapping("/by-city")
     public List<Person> getPersonsByCity(@RequestParam(value = "city") String city) {

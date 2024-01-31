@@ -5,6 +5,6 @@ import com.example.hibernate.entity.Person;
 
 import java.util.List;
 
-public interface GetService {
+public interface PersonService {
     List<Person> getPersonsByCity(String city);
 }

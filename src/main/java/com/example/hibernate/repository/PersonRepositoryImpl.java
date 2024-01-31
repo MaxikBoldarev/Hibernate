@@ -8,13 +8,15 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 @Repository
-public class GetRepositoryImpl implements GetRepository {
+public class PersonRepositoryImpl implements PersonRepository {
     @PersistenceContext
     private EntityManager entityManager;
-    private static final String query = "SELECT Person.personPrimaryKey.name from Person p where p.city_of_living = :city";
+    private static final String query = "SELECT p FROM Person p WHERE p.city_of_living = :city";
 
     @Override
     public List<Person> getPersonsByCity(String city) {
-        return entityManager.createQuery(query).setParameter("city", city).getResultList();
+        return entityManager.createQuery(query, Person.class)
+                .setParameter("city", city)
+                .getResultList();
     }
 }

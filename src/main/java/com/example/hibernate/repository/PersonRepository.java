@@ -4,6 +4,6 @@ import com.example.hibernate.entity.Person;
 
 import java.util.List;
 
-public interface GetRepository {
+public interface PersonRepository {
     List<Person> getPersonsByCity(String city);
 }

@@ -7,13 +7,10 @@ import lombok.*;
 
 import java.io.Serializable;
 
-@Data
-@Builder
-@EqualsAndHashCode
-@NoArgsConstructor
-@AllArgsConstructor
 @Embeddable
-public class PersonPrimaryKey implements Serializable {
+@Getter
+@Setter
+public class PersonId implements Serializable {
     @Column(nullable = false)
     private String name;
     @Column(nullable = false)
